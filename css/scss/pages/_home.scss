@@ -1,0 +1,285 @@
+.main {
+  .ourwork {
+    padding-top: 50px;
+    .container {
+      .work {
+        padding: 50px 0;
+        @include flex-center;
+        .text {
+          h2 {
+            font-weight: 400;
+          }
+          h4 {
+            color: $main-color;
+          }
+          p {
+            color: $p-color;
+            font-size: 13px;
+            max-width: 500px;
+            line-height: 2;
+          }
+          .btn {
+            width: 120px;
+            margin-top: 20px;
+            border-radius: 4px;
+            @extend %btn;
+            @include flex-center;
+            i {
+              font-size: $font-size;
+            }
+          }
+        }
+        .img {
+          img {
+            width: 400px;
+            border-radius: $border-radius;
+          }
+        }
+      }
+    }
+  }
+  .service {
+    background-color: $section-bg-color;
+    .container {
+      .content {
+        @include gird-system(300px, 30px);
+        padding: 50px 0;
+      }
+      .box {
+        text-align: center;
+        padding: 10px;
+        box-shadow: 0 10px 25px $color-box-shadow;
+        height: 220px;
+        flex-direction: column;
+        @include flex-around;
+        i {
+          color: $main-color;
+          font-size: 33px;
+        }
+        h4 {
+          color: $hidding-color;
+          position: relative;
+          font-weight: 400;
+          text-align: center;
+
+          &::before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            bottom: -7px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: $p-color;
+            margin: 0 auto;
+          }
+        }
+        p {
+          color: $p-color;
+          font-size: 13px;
+          width: 70%;
+        }
+      }
+    }
+  }
+  .portfolio {
+    padding: 50px 0;
+    .container {
+      .categorys {
+        @include flex-center;
+        margin: 15px auto;
+        width: 350px;
+        border: 1px solid rgba($main-text-color-dark, 20%);
+        padding: 2px;
+        border-radius: 30px;
+        .cat {
+          border-radius: 25px;
+          width: 60px;
+          padding: 7px 10px;
+          margin: 0 5px   ;
+          border: none;
+          outline: none;
+          background: transparent;
+          transition: $main-transition;
+          color: $main-text-color-dark;
+          &.active {
+            background-color: $main-color;
+            color: $main-text-color-light;
+          }
+        }
+      }
+      .images {
+        @include gird-system(250px, 20px);
+        .box {
+          overflow: hidden;
+          position: relative;
+          border-radius: $border-radius;
+          display: none;
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+          .overlay-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(black, 80%);
+            color: $main-text-color-light;
+            transition: $main-transition;
+            @include flex-center;
+            overflow: hidden;
+            flex-direction: column;
+            transform: scale(0) rotate(360deg);
+            transform-origin: right;
+            opacity: 0;
+            i {
+              transition: $main-transition;
+              margin-top: 10px;
+              font-size: 22px;
+              padding: 5px;
+              cursor: pointer;
+              &:hover {
+                color: $main-color;
+              }
+            }
+          }
+          &:hover {
+            .overlay-img {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          &.active {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .testimonials {
+    height: 400px;
+    background: linear-gradient(rgba(black, 90%), rgba(black, 90%)),
+      url("../../../image/bg1.jpg");
+    background-size: cover;
+    .container {
+      height: 100%;
+      .content {
+        height: 100%;
+        width: 70%;
+        margin: 0 auto;
+        overflow-x: hidden;
+        position: relative;
+        .cards {
+          width: calc(100% * 3);
+          height: 100%;
+          @include flex-center;
+          transition: $main-transition;
+          position: absolute;
+          left: 0;
+          top: 0;
+          .box {
+            @include flex-center;
+            flex-direction: column;
+            text-align: center;
+            color: $main-text-color-light;
+            width: 100%;
+            height: 100%;
+            i {
+              color: $main-color;
+              font-size: 33px;
+            }
+            p {
+              font-size: 15px;
+              max-width: 80%;
+            }
+            span {
+              margin: 30px 0;
+              padding: 10px;
+              h5 {
+                color: $main-color;
+              }
+            }
+          }
+        }
+        .points {
+          position: absolute;
+          left: 50%;
+          bottom: 40px;
+          width: 100%;
+          height: 30px;
+          transform: translateX(-50%);
+          @include flex-center;
+          z-index: 11111111;
+          span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $main-text-color-light;
+            cursor: pointer;
+            margin: 0 10px;
+            &.active {
+              background-color: $main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contact {
+    padding-top: 50px;
+    .container {
+      .content {
+        padding: 50px 0;
+        @include gird-system(calc(50% - 20px), 20px);
+        .info {
+          display: flex;
+          flex-direction: column;
+          li {
+            display: flex;
+            margin-bottom: 30px;
+            i {
+              font-size: 20px;
+              color: $main-color;
+              padding: 0 10px;
+            }
+            h5 {
+              line-height: 30px;
+              font-size: 15px;
+              margin-right: 7px;
+            }
+          }
+        }
+        .form {
+          input,
+          textarea {
+            background-color: $main-text-color-light;
+            margin: 10px 0;
+            width: 100%;
+            height: 30px;
+            border: none;
+            outline: none;
+            border-radius: $border-radius;
+            padding-left: 10px;
+            transition: $main-transition;
+            color: $main-color;
+            &:focus {
+              border: 1px solid $main-color;
+              background-color: white;
+            }
+          }
+          textarea {
+            height: 150px;
+            resize: none;
+            padding-top: 10px
+          }
+          .btn {
+            @extend %btn;
+          }
+        }
+      }
+    }
+  }
+}

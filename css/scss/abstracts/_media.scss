@@ -1,0 +1,67 @@
+@media (max-width: 768px) {
+  .nav {
+    .container {
+      .logo,
+      .icon-menu {
+        width: 50%;
+      }
+
+      .links {
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        width: 100%;
+        transition: $main-transition;
+        background-color: rgba($main-color, 90%);
+        li {
+          width: 100%;
+          text-align: center;
+          margin: 0;
+          padding: 20px;
+          font-size: 18px;
+        }
+        &.active {
+          height: 400px;
+        }
+      }
+    }
+  }
+
+  .main {
+    .ourwork {
+      .container {
+        .work {
+          flex-direction: column;
+          text-align: center;
+          .text {
+            .btn {
+              display: block;
+              margin: 20px auto;
+            }
+          }
+        }
+      }
+    }
+    .testimonials {
+      .container {
+        .content {
+          .cards {
+            .box {
+              p {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .contact {
+    .container {
+      .content {
+        @include flex-center;
+        flex-direction: column !important;
+      }
+    }
+  }
+}
